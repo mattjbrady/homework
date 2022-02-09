@@ -53,17 +53,62 @@ end
 
 # Part 2
 
-def hello(name)
-  # YOUR CODE HERE
+def hello name
+  # Return message with name added
+  return "Hello, " + name
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  # If empty string
+  if s.empty?
+    return false
+
+  # String contains values
+  else
+    # Extract first character as lowercase
+    char = s[0].downcase()
+    # If is alpha value
+    if (char =~ /[a-z]/) != nil
+      # If is NOT a vowel
+      if (char =~ /[^aeiou]/) != nil
+        # Char was a letter that is not a vowel
+        return true
+      else
+        # Char was a letter that is a vowel
+        return false
+      end
+    else
+      # Char was not an alpha letter
+      return false
+    end
+  end
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  # Check if string is empty
+  if s.empty?
+    return false
+  end
+
+  # Check for string containing non-binary values
+  s_test = s.chars
+  s_test.each do |value| 
+    if value != '0' && value != '1'
+      return false
+    end
+  end
+
+  # Convert string to decimal value
+  decimal_value = s.to_i(base=2)
+
+  # Test if value is divisible by 4 evenly
+  if decimal_value % 4 == 0
+    return true
+  else
+    return false
+  end
 end
+
 
 # Part 3
 
