@@ -39,4 +39,9 @@ describe JellyBean, :pending => false do
     subject { JellyBean.new('licorice') }
     it { should_not be_delicious }
   end
+  # MY TEST
+  describe 'licorice correctly named' do
+    subject { JellyBean.new('licorice') }
+    its(:name)     { should match /licorice jelly bean/i }
+  end
 end
