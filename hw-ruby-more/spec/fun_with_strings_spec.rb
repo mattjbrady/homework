@@ -15,7 +15,7 @@ describe '[2 points] palindrome detection', :pending => false do
   end    
 end
 
-describe '[2 points] word count', :pending => true do
+describe '[2 points] word count', :pending => false do
   it 'should return a hash' do
     expect('now is the time'.count_words).to be_a_kind_of Hash
   end
