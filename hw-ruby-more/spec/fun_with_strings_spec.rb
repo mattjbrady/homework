@@ -36,7 +36,7 @@ describe '[2 points] word count', :pending => false do
   end
 end
 
-describe '[2 points] anagram grouping', :pending => true do
+describe '[2 points] anagram grouping', :pending => false do
   describe 'sanity checks' do
     it 'should work on the empty string' do
       expect(''.anagram_groups).to eq([])

@@ -26,7 +26,15 @@ module FunWithStrings
   end
 
   def anagram_groups
-    # your code here
+    # split the whole set into an array of words
+    words = self.downcase.strip.split(/\W+/)
+
+    # Use the group_by iterable to put words into hashes with keys
+    # of their sorted characters - anagrams will have the same key
+    anagram_data = words.group_by { |word| word.chars.sort}
+
+    # Return the values of the hash: arrays of words that are anagrams
+    anagram_data.values
   end
 end
 
