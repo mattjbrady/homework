@@ -5,7 +5,7 @@ module FunWithStrings
     reverse_string = original_string.reverse
     
     # Return true if match has result other than nil
-    original_string.match(reverse_string) != nil
+    original_string.match(reverse_string) != nil && !self.empty?
   end
 
   def count_words

@@ -18,6 +18,9 @@ describe RockPaperScissors, :pending => false do
     it 'first player wins if both use same strategy' do
       expect(RockPaperScissors.winner(@scissors, ['Dave','S'])).to eq(@scissors)
     end
+    it "should work regardless of case for strategy" do
+      expect(RockPaperScissors.winner(@scissors, ['Dave','p'])).to eq(@scissors)
+    end
   end
   it "should raise NoSuchStrategyError if strategy isn't R, P, or S" do
     expect(lambda { RockPaperScissors.winner(@rock, ['Dave', 'w']) }).to raise_error(RockPaperScissors::NoSuchStrategyError, "Strategy must be one of R,P,S")

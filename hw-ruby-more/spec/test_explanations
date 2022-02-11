@@ -1,0 +1,39 @@
+DESSERT TEST EXPLANATIONS
+1) Tests that a Dessert object "cake" has the name of 'cake', has 400 calories, is
+delicious, and is not tagged as healthy
+2) Tests that a Dessert object "apple" has the name of 'apple', has 75 calories, is
+delicious, and is tagged as healthy
+3) Tests that the getters and setters work by successfully changing the name and 
+calories of a Dessert that has been instantiated already
+4) Tests that the JellyBean child object matches the correct atttributes as extended
+5) Tests that JellyBean objects that have the 'licorice' flavor are not tagged as delicious
+6) Tests that a 'licorice" JellyBean object has its name correct
+
+FUN_WITH_STRINGS TEST EXPLANATIONS
+PALINDROME METHOD
+1) Tests that the method works on all-lowercase strings
+2) Tests that the method doesn't count empty strings as palindromes (I added this one and 
+then modified my version of the method to catch this, hope it doesn't mess up any additional 
+tests)
+3) Tests that varying cases do not result in palindromes not being confirmed
+4) Tests that spacing and non-alphabetic characters do not interfere
+WORD COUNT METHOD
+1) Tests that the output of the method is a hash of some kind
+2) Tests that the method produces the correct result on a basic string with no capitalization 
+or punctuation
+3) Tests that strings that have punctuation/varying capitalization produce valid hashes
+4) Tests that an empty string will result in an empty hash output
+5) Tests that leading whitespace will be trimmed out of any result
+6) Tests that varying whitespace inside the string does not impact the output
+7) Tests that different spellings count differently
+
+ROCK_PAPER_SCISSORS TEST EXPLANATIONS
+1) Tests that correct outcome occurs with rock vs scissors
+2) Tests that correct outcome occurs with paper vs scissors
+3) Tests that correct victory occurs with rock vs papar
+4) Tests that player 1 wins if both players choose same strategy
+5) Tests that strategy for a player is case-insensitive
+6) Tests that incorrect strategies trigger the "NoSuchStrategyError" for this class
+7) Tests that the tournament base case works correctly with just two players
+8) Tests that the full recursive case for the tournament method results in the correct
+win condition (player 'Richard')

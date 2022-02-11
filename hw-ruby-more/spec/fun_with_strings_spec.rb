@@ -6,6 +6,9 @@ describe '[2 points] palindrome detection', :pending => false do
     expect('redivider').to  be_a_palindrome
     expect('abracadabra').not_to  be_a_palindrome
   end
+  it 'should not confirm empty strings' do
+    expect('').not_to  be_a_palindrome
+  end
   it 'should be case-insensitive', :pending => false do
     expect('ReDivider').to be_a_palindrome
   end
@@ -34,6 +37,9 @@ describe '[2 points] word count', :pending => false do
   it 'ignores embedded whitespace' do
     expect("four   four  \n four \t four!".count_words).to eq({'four' => 4})
   end
+  it 'counts different spellings as different words' do
+    expect("Barbecue Barbeque BBQ barbecue".count_words).to eq({'barbecue' => 2, 'barbeque' => 1, 'bbq' => 1})
+  end 
 end
 
 describe '[2 points] anagram grouping', :pending => false do
@@ -47,6 +53,13 @@ describe '[2 points] anagram grouping', :pending => false do
   end
   it 'for "scream cars for four scar creams"' do
     @anagrams =  'scream cars for four scar creams'.anagram_groups
+    @anagrams.each { |group| group.sort! }
+    [%w(cars scar), %w(four), %w(for), %w(creams scream)].each do |group|
+        expect(@anagrams).to include(group)
+    end
+  end
+  it 'for "Scream CARS for . four sCaR     -creaMs"' do
+    @anagrams =  'Scream CARS for . four sCaR     -creaMs'.anagram_groups
     @anagrams.each { |group| group.sort! }
     [%w(cars scar), %w(four), %w(for), %w(creams scream)].each do |group|
         expect(@anagrams).to include(group)
